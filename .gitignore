@@ -1,11 +1,19 @@
-# 1. Cria o arquivo .gitignore para que o git ignore a venv, banco e cache
-echo "venv/" >> .gitignore
-echo "__pycache__/" >> .gitignore
-echo "*.sqlite3" >> .gitignore
+# Ambiente virtual
+venv/
+.venv/
+env/
 
-# 2. Remove o venv do Git (mas MANTÉM ele no seu computador, não vai apagar seus arquivos)
-git rm -r --cached venv
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
 
-# 3. Faz o commit da remoção e do .gitignore
-git add .
-git commit -m "remove venv e adiciona .gitignore"
+# Banco de dados local
+*.sqlite3
+
+# Arquivos de ambiente
+.env
+
+# IDEs
+.vscode/
+.idea/
